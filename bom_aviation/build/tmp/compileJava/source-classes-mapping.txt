@@ -1,8 +1,6 @@
 cn/com/taiji/domain/state/DataType.java
  cn.com.taiji.domain.state.DataType
  cn.com.taiji.domain.state.DataType$ValueType
-cn/com/Application.java
- cn.com.Application
 cn/com/taiji/domain/state/Scheme.java
  cn.com.taiji.domain.state.Scheme
 cn/com/taiji/repository/state/SatelStateRepo.java
@@ -21,10 +19,6 @@ cn/com/taiji/service/Impl/InitScoreRuleDataServiceImpl.java
  cn.com.taiji.service.Impl.InitScoreRuleDataServiceImpl
 cn/com/taiji/domain/state/TopologySpeed.java
  cn.com.taiji.domain.state.TopologySpeed
-cn/com/taiji/config/RedisConfig.java
- cn.com.taiji.config.RedisConfig
-cn/com/taiji/utils/RedisUtil.java
- cn.com.taiji.utils.RedisUtil
 cn/com/taiji/service/DataTypeService.java
  cn.com.taiji.service.DataTypeService
 cn/com/taiji/service/Impl/SchemeServiceImpl.java
@@ -95,8 +89,6 @@ cn/com/taiji/repository/state/TopologySpeedRepo.java
  cn.com.taiji.repository.state.TopologySpeedRepo
 cn/com/taiji/service/SatelStateService.java
  cn.com.taiji.service.SatelStateService
-cn/com/taiji/config/FastJsonRedisSerializer.java
- cn.com.taiji.config.FastJsonRedisSerializer
 cn/com/taiji/repository/state/DataCatalogRepo.java
  cn.com.taiji.repository.state.DataCatalogRepo
 cn/com/taiji/service/TopologyStateService.java
@@ -124,3 +116,5 @@ cn/com/taiji/controller/state/RadarStateController.java
  cn.com.taiji.controller.state.RadarStateController
 cn/com/taiji/controller/state/TopologyStateController.java
  cn.com.taiji.controller.state.TopologyStateController
+cn/com/Application.java
+ cn.com.Application

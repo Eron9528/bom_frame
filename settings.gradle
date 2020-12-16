@@ -1,5 +1,5 @@
 rootProject.name = 'bom_frame'
-//include 'bom_aviation'
+include 'bom_aviation'
 include 'bom_state'
 
 

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface BaseNormTypeRepo extends JpaRepository <BaseNormType,Long>{
+public interface BaseNormTypeRepo extends JpaRepository <BaseNormType ,Long>{
 
     @Query(value = "from BaseNormType where catalog.info=?1")
     List<BaseNormType> findByCatalogInfo(String catalogInfo);

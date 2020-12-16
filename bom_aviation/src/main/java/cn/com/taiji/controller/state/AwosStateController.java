@@ -1,6 +1,5 @@
 package cn.com.taiji.controller.state;
 
-
 import cn.com.taiji.domain.state.AwosState;
 import cn.com.taiji.domain.state.BaseNormType;
 import cn.com.taiji.domain.state.DataType;

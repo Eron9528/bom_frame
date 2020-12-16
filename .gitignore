@@ -1,0 +1,5 @@
+# Project exclude paths
+/.gradle/
+/bom_state/build/
+/bom_state/build/classes/java/main/
+/build/

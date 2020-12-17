@@ -1,0 +1,18 @@
+
+server:
+  port: 8082
+  servletPath: /
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+      enabled: true
+    instance:
+      healthCheckUrlPath: ${server.servletPath}/health
+      statusPageUrlPath: ${server.servletPath}/info
+      homePageUrl: ${server.servletPath}/
+      healthcheck:
+        enabled: true
+spring:
+  application:
+    name: app-state

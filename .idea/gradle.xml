@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/bom-eureka-server" />
             <option value="$PROJECT_DIR$/bom_aviation" />
+            <option value="$PROJECT_DIR$/bom_login" />
             <option value="$PROJECT_DIR$/bom_state" />
           </set>
         </option>

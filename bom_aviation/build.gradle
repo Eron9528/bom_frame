@@ -13,10 +13,9 @@ dependencies {
     compile (
             'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-data-jpa',
-//                'org.springframework.boot:spring-boot-starter-actuator',
-//                'org.springframework.boot:spring-boot-starter-data-redis',
+//          'org.springframework.boot:spring-boot-starter-data-redis',
             'mysql:mysql-connector-java',
-//                'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server',
-//                'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+//          'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server',
+ //           'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     )
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.73'}

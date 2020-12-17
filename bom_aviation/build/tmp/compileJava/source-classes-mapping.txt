@@ -1,6 +1,8 @@
 cn/com/taiji/domain/state/DataType.java
  cn.com.taiji.domain.state.DataType
  cn.com.taiji.domain.state.DataType$ValueType
+cn/com/Application.java
+ cn.com.Application
 cn/com/taiji/domain/state/Scheme.java
  cn.com.taiji.domain.state.Scheme
 cn/com/taiji/repository/state/SatelStateRepo.java
@@ -116,5 +118,3 @@ cn/com/taiji/controller/state/RadarStateController.java
  cn.com.taiji.controller.state.RadarStateController
 cn/com/taiji/controller/state/TopologyStateController.java
  cn.com.taiji.controller.state.TopologyStateController
-cn/com/Application.java
- cn.com.Application

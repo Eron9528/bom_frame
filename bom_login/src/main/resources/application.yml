@@ -16,3 +16,16 @@ eureka:
 spring:
   application:
     name: app-login
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/bom_login?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+allowPublicKeyRetrieval: true&useSSL=false

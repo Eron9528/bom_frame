@@ -17,13 +17,38 @@ public class Permission {
     private long id;
     @Column(name = "PERMISSION_NAME")
     private String permissionName;
-    @Column(name = "SELECT")
-    private boolean select;
-    @Column(name = "ADD")
-    private boolean add;
-    @Column(name = "UPDATE")
-    private boolean update;
-    @Column(name = "DEL")
-    private boolean del;
+    @Column(name = "menu")
+    private String menu;
 
+    public Permission() {
+    }
+
+    public Permission(String permissionName, String menu) {
+        this.permissionName = permissionName;
+        this.menu = menu;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getPermissionName() {
+        return permissionName;
+    }
+
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName;
+    }
+
+    public String getMenu() {
+        return menu;
+    }
+
+    public void setMenu(String menu) {
+        this.menu = menu;
+    }
 }

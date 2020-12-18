@@ -17,6 +17,9 @@ public class Account {
     private String account;
     @Column(name = "PASSWORD")
     private String password;
+    @ManyToMany
+    @JoinColumn(name = "ROLE_ID")
+    private Role role;
     @OneToOne
     @JoinColumn(name = "USER_ID")
     private User user;
@@ -25,10 +28,11 @@ public class Account {
 
     }
 
-    public Account(String account, String password, User user) {
+    public Account(String account, String password, User user, Role role) {
         this.account = account;
         this.password = password;
         this.user = user;
+        this.role = role;
     }
 
     public long getId() {

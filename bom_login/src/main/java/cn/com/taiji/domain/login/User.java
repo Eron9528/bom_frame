@@ -2,6 +2,9 @@ package cn.com.taiji.domain.login;
 
 import javax.persistence.*;
 
+/**
+ *  保存注册账号的个人信息。
+ */
 @Entity
 @Table(name="USER")
 public class User {

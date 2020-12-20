@@ -4,4 +4,5 @@ include 'bom_state'
 include 'bom-eureka-server'
 include 'bom_login'
 include 'zull'
+include 'bom_zull'
 

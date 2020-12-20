@@ -1,2 +1,57 @@
+cn/com/taiji/domain/login/UserGroup.java
+ cn.com.taiji.domain.login.UserGroup
+cn/com/taiji/service/login/UserService.java
+ cn.com.taiji.service.login.UserService
+cn/com/taiji/service/login/UserGroupService.java
+ cn.com.taiji.service.login.UserGroupService
+cn/com/taiji/service/login/Impl/RoleServiceImpl.java
+ cn.com.taiji.service.login.Impl.RoleServiceImpl
 cn/com/LoginApplication.java
  cn.com.LoginApplication
+cn/com/taiji/repository/login/RoleRepo.java
+ cn.com.taiji.repository.login.RoleRepo
+cn/com/taiji/service/login/Impl/UserServiceImpl.java
+ cn.com.taiji.service.login.Impl.UserServiceImpl
+cn/com/taiji/domain/login/Account.java
+ cn.com.taiji.domain.login.Account
+cn/com/taiji/repository/login/UserRepo.java
+ cn.com.taiji.repository.login.UserRepo
+cn/com/taiji/repository/login/UserGroupRepo.java
+ cn.com.taiji.repository.login.UserGroupRepo
+cn/com/taiji/contorller/auth/AuthServerConfig.java
+ cn.com.taiji.contorller.auth.AuthServerConfig
+ cn.com.taiji.contorller.auth.AuthServerConfig$1
+cn/com/taiji/domain/login/Permission.java
+ cn.com.taiji.domain.login.Permission
+cn/com/taiji/repository/login/PermissionRepo.java
+ cn.com.taiji.repository.login.PermissionRepo
+cn/com/taiji/contorller/auth/SecurityConfiguration.java
+ cn.com.taiji.contorller.auth.SecurityConfiguration
+cn/com/taiji/contorller/login/UserGroupController.java
+ cn.com.taiji.contorller.login.UserGroupController
+cn/com/taiji/contorller/login/UserController.java
+ cn.com.taiji.contorller.login.UserController
+cn/com/taiji/contorller/login/PermissionController.java
+ cn.com.taiji.contorller.login.PermissionController
+cn/com/taiji/service/login/AccountService.java
+ cn.com.taiji.service.login.AccountService
+cn/com/taiji/service/login/Impl/AccountServiceImpl.java
+ cn.com.taiji.service.login.Impl.AccountServiceImpl
+cn/com/taiji/domain/login/User.java
+ cn.com.taiji.domain.login.User
+cn/com/taiji/service/login/PermissionService.java
+ cn.com.taiji.service.login.PermissionService
+cn/com/taiji/contorller/login/AccountController.java
+ cn.com.taiji.contorller.login.AccountController
+cn/com/taiji/repository/login/AccountRepo.java
+ cn.com.taiji.repository.login.AccountRepo
+cn/com/taiji/service/login/Impl/PermissionServiceImpl.java
+ cn.com.taiji.service.login.Impl.PermissionServiceImpl
+cn/com/taiji/service/login/RoleService.java
+ cn.com.taiji.service.login.RoleService
+cn/com/taiji/contorller/login/RoleController.java
+ cn.com.taiji.contorller.login.RoleController
+cn/com/taiji/service/login/Impl/UserGroupServiceImpl.java
+ cn.com.taiji.service.login.Impl.UserGroupServiceImpl
+cn/com/taiji/domain/login/Role.java
+ cn.com.taiji.domain.login.Role

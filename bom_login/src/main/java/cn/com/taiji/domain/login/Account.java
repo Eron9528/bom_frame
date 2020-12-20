@@ -1,10 +1,12 @@
 package cn.com.taiji.domain.login;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  *   注册账号， 包括账号的名称和密码。 登录后可以配置个人信息，个人信息保存在User 类
  */
+
 @Entity
 @Table(name = "ACCOUNT")
 public class Account {
@@ -13,26 +15,21 @@ public class Account {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "ACCOUNT")
-    private String account;
+    @Column(name = "USERNAME")
+    private String username;
     @Column(name = "PASSWORD")
     private String password;
-    @ManyToMany
-    @JoinColumn(name = "ROLE_ID")
-    private Role role;
-    @OneToOne
-    @JoinColumn(name = "USER_ID")
-    private User user;
+    @ManyToMany(mappedBy = "accounts")
+    private Set<Role> roles;
 
     public Account() {
 
     }
 
-    public Account(String account, String password, User user, Role role) {
-        this.account = account;
+    public Account(String username, String password,Set<Role> roles) {
+        this.username = username;
         this.password = password;
-        this.user = user;
-        this.role = role;
+ //       this.roles = roles;
     }
 
     public long getId() {
@@ -43,12 +40,12 @@ public class Account {
         this.id = id;
     }
 
-    public String getAccount() {
-        return account;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -59,11 +56,11 @@ public class Account {
         this.password = password;
     }
 
-    public User getUser() {
-        return user;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

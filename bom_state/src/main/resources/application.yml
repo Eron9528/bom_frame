@@ -14,5 +14,19 @@ eureka:
       healthcheck:
         enabled: true
 spring:
+  main:
+    allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
   application:
     name: app-state
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/bom_state?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: create
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true

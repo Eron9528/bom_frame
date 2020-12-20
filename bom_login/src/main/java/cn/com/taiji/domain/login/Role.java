@@ -1,6 +1,7 @@
 package cn.com.taiji.domain.login;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  *   角色表：   用户新建
@@ -13,18 +14,27 @@ public class Role {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "ROLE_NAME")
     private String roleName;
     @ManyToMany
-    @JoinColumn(name = "PERMISSION_ID")
-    private Permission permission;
+    @JoinTable(name = "ROLE_PERMISSION",
+            joinColumns = @JoinColumn(name = "ROLE_ID", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "PERMISSION_ID", referencedColumnName = "id"))
+    private Set<Permission> permissions;
+    @ManyToMany
+    @JoinTable(name = "ROLE_ACCOUNT",
+            joinColumns = @JoinColumn(name = "ROLE_ID", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ID"))
+    private Set<Account> accounts;
 
     public Role() {
 
     }
 
-    public Role(String roleName, Permission permission) {
+    public Role(String roleName, Set<Permission> permissions, Set<Account> accounts) {
         this.roleName = roleName;
-        this.permission = permission;
+        this.permissions = permissions;
+        this.accounts = accounts;
     }
 
     public long getId() {
@@ -43,11 +53,19 @@ public class Role {
         this.roleName = roleName;
     }
 
-    public Permission getPermission() {
-        return permission;
+    public Set<Permission> getPermissions() {
+        return permissions;
     }
 
-    public void setPermission(Permission permission) {
-        this.permission = permission;
+    public void setPermissions(Set<Permission> permissions) {
+        this.permissions = permissions;
+    }
+
+    public Set<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Set<Account> accounts) {
+        this.accounts = accounts;
     }
 }

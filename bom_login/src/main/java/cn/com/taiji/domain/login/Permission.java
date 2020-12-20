@@ -1,14 +1,13 @@
 package cn.com.taiji.domain.login;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 /**
  * 权限表   权限名称，进行曾删改查
  */
-
+@Entity
+@Table(name = "PERMISSION")
 public class Permission {
 
     @Id
@@ -17,15 +16,18 @@ public class Permission {
     private long id;
     @Column(name = "PERMISSION_NAME")
     private String permissionName;
-    @Column(name = "menu")
+    @Column(name = "MENU")
     private String menu;
+    @ManyToMany(mappedBy = "permissions")
+    private Set<Role> roles;
 
     public Permission() {
     }
 
-    public Permission(String permissionName, String menu) {
+    public Permission(String permissionName, String menu, Set<Role> roles) {
         this.permissionName = permissionName;
         this.menu = menu;
+        this.roles = roles;
     }
 
     public long getId() {
@@ -50,5 +52,13 @@ public class Permission {
 
     public void setMenu(String menu) {
         this.menu = menu;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

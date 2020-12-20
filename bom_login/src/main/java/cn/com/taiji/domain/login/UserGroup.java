@@ -17,6 +17,4 @@ public class UserGroup {
     private long id;
     @Column(name = "GROUP_NAME")
     private String groupName;
-    @Column(name = "USER_ID")
-    private List<User> users;
 }

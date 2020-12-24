@@ -4,5 +4,5 @@ include 'bom_aviation'
 include 'bom_login'
 include 'bom_state'
 include 'bom_zuul'
-
+include 'bom-mail'
 

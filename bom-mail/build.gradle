@@ -2,7 +2,8 @@ plugins {
     id 'java'
 }
 
-group 'com.taiji.avation'
+group 'com.taiji'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -10,12 +11,10 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     compile (
             'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-data-jpa',
-            'mysql:mysql-connector-java',
+            'mysql:mysql-connector-java'
     )
-    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.73'
-    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 }
-

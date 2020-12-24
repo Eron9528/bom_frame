@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8083
   servletPath: /
 eureka:
   client:
@@ -16,7 +16,7 @@ spring:
   main:
     allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
   application:
-    name: app-mail
+    name: app-message
 #  datasource:
 #    url: jdbc:mysql://127.0.0.1:3306/bom_mail?useSSL=false&serverTimezone=UTC
 #    driver-class-name: com.mysql.cj.jdbc.Driver

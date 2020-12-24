@@ -1,8 +1,11 @@
 rootProject.name = 'bom_frame'
 include 'bom-eureka-server'
-include 'bom_aviation'
 include 'bom_login'
-include 'bom_state'
 include 'bom_zuul'
 include 'bom-mail'
+include 'bom-user-centre'
+include 'bom-message'
+include 'bom-order'
+include 'bom-pay'
+include 'bom-search'
 

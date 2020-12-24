@@ -15,6 +15,7 @@ eureka:
 #路由到服务名为 eurekaservice1或 eureka
 #service2中的服务集群去。
 zuul:
+  prefix: /api
   routes:
     route1:
       path: /aviation/**

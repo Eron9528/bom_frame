@@ -1,0 +1,12 @@
+cn/com/taiji/domain/dict/OrderStatus.java
+ cn.com.taiji.domain.dict.OrderStatus
+cn/com/taiji/domain/dict/PayWay.java
+ cn.com.taiji.domain.dict.PayWay
+cn/com/taiji/domain/dict/DeliveryWay.java
+ cn.com.taiji.domain.dict.DeliveryWay
+cn/com/taiji/OrderApplication.java
+ cn.com.taiji.OrderApplication
+cn/com/taiji/domain/OrderState.java
+ cn.com.taiji.domain.OrderState
+cn/com/taiji/domain/Order.java
+ cn.com.taiji.domain.Order

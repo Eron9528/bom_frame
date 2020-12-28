@@ -2,8 +2,8 @@ cn/com/taiji/domain/login/UserGroup.java
  cn.com.taiji.domain.login.UserGroup
 cn/com/taiji/service/login/UserService.java
  cn.com.taiji.service.login.UserService
-cn/com/taiji/service/login/UserGroupService.java
- cn.com.taiji.service.login.UserGroupService
+cn/com/taiji/domain/login/Role.java
+ cn.com.taiji.domain.login.Role
 cn/com/taiji/service/login/Impl/RoleServiceImpl.java
  cn.com.taiji.service.login.Impl.RoleServiceImpl
 cn/com/LoginApplication.java
@@ -53,5 +53,5 @@ cn/com/taiji/contorller/login/RoleController.java
  cn.com.taiji.contorller.login.RoleController
 cn/com/taiji/service/login/Impl/UserGroupServiceImpl.java
  cn.com.taiji.service.login.Impl.UserGroupServiceImpl
-cn/com/taiji/domain/login/Role.java
- cn.com.taiji.domain.login.Role
+cn/com/taiji/service/login/UserGroupService.java
+ cn.com.taiji.service.login.UserGroupService

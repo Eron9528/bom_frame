@@ -1,0 +1,25 @@
+server:
+  port: 8086
+  servletPath: /
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+      enabled: true
+    instance:
+      healthCheckUrlPath: ${server.servletPath}/health
+      statusPageUrlPath: ${server.servletPath}/info
+      homePageUrl: ${server.servletPath}/
+      healthcheck:
+        enabled: true
+spring:
+  cloud:
+    gateway:
+      routes:
+        #我们自定义的路由 ID，保持唯一
+        - id: neo_route
+          #目标服务地址
+          uri: http://www.ityouknow.com
+          #路由条件，Predicate 接受一个输入参数，返回一个布尔值结果
+          predicates:
+            - Path=/spring-cloud

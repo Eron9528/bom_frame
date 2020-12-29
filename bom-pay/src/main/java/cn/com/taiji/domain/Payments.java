@@ -4,10 +4,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 /**
  * @描述   该表为付款表，这里的付款是从商户的角度来说的，对于用户来说就是收款。初次涉及账户逻辑时很容易将这逻辑搞混，
@@ -25,4 +24,11 @@ public class Payments {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Id
     private String id;
+    @Column(name = "PAYMENT_AMOUNT")
+    private BigDecimal paymentAmount;        // 付款金额
+    @Column(name = "USER_ID")
+    private String userId;                // 付款人
+    @Column(name = "PAYMENT_TIME")
+    private LocalDateTime paymentTime;
+
 }

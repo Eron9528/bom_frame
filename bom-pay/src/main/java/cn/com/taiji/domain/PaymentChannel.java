@@ -1,13 +1,11 @@
 package cn.com.taiji.domain;
 
+import cn.com.taiji.domain.dict.UserType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @描述  此表为付款渠道表，如果从字面意思进行理解便可知道，这个是付款时的渠道。
@@ -24,4 +22,8 @@ public class PaymentChannel {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Id
     private String id;
+    @Column(name = "TYPE")
+    @Enumerated
+    private UserType type;    // 用户类型
+
 }

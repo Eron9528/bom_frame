@@ -1,13 +1,11 @@
 package cn.com.taiji.domain;
 
+import cn.com.taiji.domain.dict.ChannelType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @描述   该表是渠道配置表，主要是商户使用。该表中配置了商户以及此商户所接入的渠道，比如支付宝或者某银行。
@@ -24,5 +22,10 @@ public class ChannelConfig {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Id
     private String id;
+    @Column(name = "USER_ID")
+    private String userId;
+    @Column(name = "CHANNEL_TYPE")
+    @Enumerated
+    private ChannelType channelType;  // 渠道类型
 
 }

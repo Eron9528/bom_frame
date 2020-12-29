@@ -10,6 +10,14 @@ public class Result<T>{
     private String msg;
 
     public Result() {
+
+    }
+
+    public Result(T data) {
+        this.success = true;
+        this.data = data;
+        this.status = 202;
+        this.msg = "操作成功";
     }
 
     public Result(boolean success, int status, T data, String msg) {

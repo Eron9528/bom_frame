@@ -52,6 +52,8 @@ subprojects {
         compile 'org.springframework.boot:spring-boot-starter-undertow'
         //使用健康检查组件
         compile 'org.springframework.boot:spring-boot-starter-actuator'
+        //lombok
+        compile group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
     }
     dependencyManagement {
         imports {

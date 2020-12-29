@@ -28,7 +28,7 @@ spring:
       hibernate:
         hbm2ddl:
           auto: update
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
   redis:
     host: 127.0.0.1

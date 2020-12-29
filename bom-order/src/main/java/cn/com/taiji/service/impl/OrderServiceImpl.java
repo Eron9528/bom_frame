@@ -1,11 +1,17 @@
 package cn.com.taiji.service.impl;
 
 import cn.com.taiji.domain.Order;
+import cn.com.taiji.domain.OrderRepository;
 import cn.com.taiji.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class OrderServiceImpl implements OrderService {
+
+    @Autowired
+    OrderRepository orderRepository;
+
     @Override
     public void addOrder(String id) {
 
@@ -13,7 +19,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void deleteOrder(String id) {
-
+        orderRepository.deleteById(id);
     }
 
     @Override
@@ -27,7 +33,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void select(String id) {
-
+    public Order select(String id) {
+        return orderRepository.findById(id).orElse(null);
     }
 }

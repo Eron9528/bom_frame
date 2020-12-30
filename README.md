@@ -25,6 +25,8 @@
 * gradle 排除依赖，通过configration的成功，另一种没有成功
 * 增加 bom-pay 服务中的数据库表设计
 
-
+#### 20-12-30
+* 加入bom-message 实体类
+* vue 页面建设
 
 

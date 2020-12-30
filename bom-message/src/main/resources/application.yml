@@ -17,15 +17,15 @@ spring:
     allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
   application:
     name: app-message
-#  datasource:
-#    url: jdbc:mysql://127.0.0.1:3306/bom_mail?useSSL=false&serverTimezone=UTC
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    username: root
-#    password: root
-#  jpa:
-#    properties:
-#      hibernate:
-#        hbm2ddl:
-#          auto: create
-#        dialect: org.hibernate.dialect.MySQL8Dialect
-#    show-sql: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/bom_message?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: create
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true

@@ -1,2 +1,0 @@
-cn/com/MailApplication.java
- cn.com.MailApplication

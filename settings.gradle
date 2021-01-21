@@ -9,4 +9,5 @@ include 'bom-order'
 include 'bom-pay'
 include 'bom-search'
 include 'bom-gateway'
+include 'bom_test'
 

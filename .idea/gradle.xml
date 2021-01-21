@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/bom-search" />
             <option value="$PROJECT_DIR$/bom-user-centre" />
             <option value="$PROJECT_DIR$/bom_login" />
+            <option value="$PROJECT_DIR$/bom_test" />
             <option value="$PROJECT_DIR$/bom_zuul" />
           </set>
         </option>

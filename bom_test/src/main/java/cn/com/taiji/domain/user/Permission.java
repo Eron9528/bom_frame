@@ -1,8 +1,12 @@
 package cn.com.taiji.domain.user;
 
+import cn.com.taiji.domain.rightsTree.interfaces.TreeFid;
+import cn.com.taiji.domain.rightsTree.interfaces.TreeId;
+import cn.com.taiji.dto.User.PermissionDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -16,6 +20,7 @@ public class Permission {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @TreeId
     private long id;
     @Column(name = "PERMISSION_NAME")
     private String permissionName;
@@ -23,8 +28,11 @@ public class Permission {
     private String menu;
     @Column(name = "LAYER")
     private int layer;
+    @TreeFid
     @Column(name = "UP_ID")
     private long upId;      //  上级id
+    @Column(name = "HAS_CHILD")
+    private boolean hasChild;
 
     @ManyToMany(mappedBy = "permissions")
     @JsonIgnore
@@ -86,4 +94,13 @@ public class Permission {
     public void setUpId(long upId) {
         this.upId = upId;
     }
+
+    public boolean isHasChild() {
+        return hasChild;
+    }
+
+    public void setHasChild(boolean hasChild) {
+        this.hasChild = hasChild;
+    }
+
 }

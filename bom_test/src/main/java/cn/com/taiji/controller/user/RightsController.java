@@ -48,4 +48,10 @@ public class RightsController {
         return new Result(right);
     }
 
+    @PostMapping("editNode/{menuId}")
+    public Result editNode(@PathVariable("id") long id, @RequestBody Permission permission) {
+        Permission right = permissionService.editNode(id, permission);
+        return new Result(right);
+    }
+
 }

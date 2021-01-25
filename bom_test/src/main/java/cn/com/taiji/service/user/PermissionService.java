@@ -39,4 +39,11 @@ public interface PermissionService {
      * @Date: 22:00 2021/1/24
      */
     Permission addNode(long menuId, Permission permission);
+
+    /**
+     * @描述 修改节点信息
+     * @创建人 Mayu
+     * @创建时间 2021/1/25
+    */
+    Permission editNode(long id, Permission permission);
 }

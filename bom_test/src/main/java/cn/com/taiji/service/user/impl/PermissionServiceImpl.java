@@ -99,4 +99,13 @@ public class PermissionServiceImpl implements PermissionService {
         return permission;
     }
 
+    @Override
+    public Permission editNode(long id, Permission permission) {
+        Permission old = permissionRepo.findById(id).orElse(null);
+        old.setPermissionName(permission.getPermissionName());
+        old.setMenu(permission.getMenu());
+        permissionRepo.save(old);
+        return old;
+    }
+
 }

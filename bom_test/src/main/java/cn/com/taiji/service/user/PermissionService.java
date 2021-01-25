@@ -46,4 +46,11 @@ public interface PermissionService {
      * @创建时间 2021/1/25
     */
     Permission editNode(long id, Permission permission);
+
+    /**
+     * @描述   删除所选节点
+     * @创建人 Mayu
+     * @创建时间 2021/1/25
+    */
+    Permission deleteById(long id);
 }

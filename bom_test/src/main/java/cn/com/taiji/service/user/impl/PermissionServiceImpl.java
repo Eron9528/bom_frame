@@ -108,4 +108,11 @@ public class PermissionServiceImpl implements PermissionService {
         return old;
     }
 
+    @Override
+    public Permission deleteById(long id) {
+        Permission right = permissionRepo.findById(id).orElse(null);
+        permissionRepo.deleteById(id);
+        return right;
+    }
+
 }

@@ -1,0 +1,17 @@
+server:
+  port: 8085
+  servletPath: /
+
+spring:
+  datasource:
+    url: jdbc:mysql://rm-2zeub43c0v0fey5k5go.mysql.rds.aliyuncs.com:3306/mayulong_test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Mcghhf1314
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true

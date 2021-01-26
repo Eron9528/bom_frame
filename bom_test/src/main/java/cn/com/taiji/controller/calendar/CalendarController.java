@@ -20,9 +20,9 @@ public class CalendarController {
     private CalendarService calendarService;
 
     //得到排班表结果
-    @GetMapping("getCalendar")
-    public Result getCalendar(){
-        List<Calendar> calendarList = calendarService.getCalendar();
+    @GetMapping("getCalendar/{name}")
+    public Result getCalendar(@PathVariable("name") String name){
+        List<Calendar> calendarList = calendarService.getCalendar(name);
         return new Result(calendarList);
     }
 

@@ -11,11 +11,11 @@ import java.util.List;
 public interface CalendarService {
 
     /**
-     * @描述  得到
+     * @描述  得到员工对应的日历
      * @创建人 Mayu
      * @创建时间 2021/1/25
     */
-    List<Calendar> getCalendar();
+    List<Calendar> getCalendar(String name);
 
     /**
      * @描述   保存导入图片

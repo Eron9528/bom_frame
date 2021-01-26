@@ -17,12 +17,14 @@ public class Calendar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "NAME")
+    private String name;     // 员工名称
     @Column(name = "DAY")
-    private LocalDate day;
+    private LocalDate day;    // 日期
     @Column(name = "TYPE")
     @Enumerated
     private JobType type;     //  当天值班属性
     @Column(name = "DAY_MESSAGE")
-    private String dayMessage;
+    private String dayMessage;    // 说明   （用户可以自己添加当时备注）
 
 }

@@ -3,6 +3,7 @@ package cn.com.taiji.service.calendar.impl;
 import cn.com.taiji.domain.calendar.Calendar;
 import cn.com.taiji.domain.calendar.Picture;
 import cn.com.taiji.domain.calendar.PictureRepository;
+import cn.com.taiji.domain.calendar.dict.CalendarView;
 import cn.com.taiji.service.calendar.CalendarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,7 +21,9 @@ public class CalendarServiceImpl implements CalendarService {
     private PictureRepository pictureRepository;
 
     @Override
-    public List<Calendar> getCalendar() {
+    public List<Calendar> getCalendar(String name) {
+        List<CalendarView> calendars = new ArrayList<>();
+
         return null;
     }
 
@@ -40,17 +44,17 @@ public class CalendarServiceImpl implements CalendarService {
         return false;
     }
 
-    https://www.weizhixi.com/article/59.html
-    // 识别图片
-    public void analisy() {
-        File imageFile = new File("C:/Users/XQ/Desktop/en.png");
-        BufferedImage image = ImageIO.read(imageFile);
-        //对图片进行处理
-        image = convertImage(image);
-        ITesseract instance = new Tesseract();//JNA Interface Mapping
-        String result = instance.doOCR(image); //识别
-        System.out.println(result);
-    }}
+//    https://www.weizhixi.com/article/59.html
+//    // 识别图片
+//    public void analisy() {
+//        File imageFile = new File("C:/Users/XQ/Desktop/en.png");
+//        BufferedImage image = ImageIO.read(imageFile);
+//        //对图片进行处理
+//        image = convertImage(image);
+//        ITesseract instance = new Tesseract();//JNA Interface Mapping
+//        String result = instance.doOCR(image); //识别
+//        System.out.println(result);
+//    }}
 
     @Override
     public List<Picture> findAllPicture() {

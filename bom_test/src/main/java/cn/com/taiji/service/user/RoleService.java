@@ -1,11 +1,12 @@
 package cn.com.taiji.service.user;
 
 import cn.com.taiji.domain.user.Role;
+import cn.com.taiji.dto.User.RoleDto;
 
 import java.util.List;
 
 public interface RoleService {
-    List<Role> findAll();
+    List<RoleDto> findAll();
 
     Role addRole(Role role);
 

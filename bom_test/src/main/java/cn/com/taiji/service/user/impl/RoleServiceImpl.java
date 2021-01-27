@@ -2,11 +2,13 @@ package cn.com.taiji.service.user.impl;
 
 import cn.com.taiji.domain.user.Role;
 import cn.com.taiji.domain.user.RoleRepo;
-import cn.com.taiji.domain.user.User;
+import cn.com.taiji.dto.User.RoleDto;
+import cn.com.taiji.service.user.PermissionService;
 import cn.com.taiji.service.user.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,10 +16,26 @@ public class RoleServiceImpl implements RoleService {
 
     @Autowired
     private RoleRepo roleRepo;
+    @Autowired
+    private PermissionService permissionService;
 
     @Override
-    public List<Role> findAll() {
-        return roleRepo.findAll();
+    public List<RoleDto> findAll() {
+        List<Role> roles = roleRepo.findAll();
+        List<RoleDto> roleDtoList = new ArrayList<>();
+
+        for(Role role : roles){
+            RoleDto dto = new RoleDto();
+            dto.setId(role.getId());
+            dto.setRoleName(role.getRoleName());
+            dto.setRoleDesc(role.getRoleDesc());
+            // 再这里暂时先取得所有的权限，未来再做修改
+            //todo
+            dto.setChildrenList(permissionService.findTree());
+            roleDtoList.add(dto);
+        }
+
+        return roleDtoList;
     }
 
     @Override

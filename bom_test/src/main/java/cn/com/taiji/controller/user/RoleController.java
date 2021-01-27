@@ -2,6 +2,7 @@ package cn.com.taiji.controller.user;
 
 import cn.com.taiji.domain.user.Role;
 import cn.com.taiji.dto.Result;
+import cn.com.taiji.dto.User.RoleDto;
 import cn.com.taiji.service.user.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class RoleController {
 
     @GetMapping("roles")
     public Result getRoles(){
-        List<Role> roles = roleService.findAll();
+        List<RoleDto> roles = roleService.findAll();
         return new Result(roles);
     }
 

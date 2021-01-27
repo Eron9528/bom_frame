@@ -24,7 +24,6 @@ public class Role {
     @JoinTable(name = "ROLE_PERMISSION",
             joinColumns = @JoinColumn(name = "ROLE_ID", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "PERMISSION_ID", referencedColumnName = "id"))
-    @JsonIgnore
     private Set<Permission> permissions;
     @ManyToMany
     @JoinTable(name = "ROLE_USER",

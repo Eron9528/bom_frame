@@ -57,27 +57,6 @@ public class TestController {
             menus.put(first.getPermissionName(),secondList);
         });
 
-
-        // 用户管理
-//        List<String[]> listUsers = new ArrayList<>();
-//        listUsers.add(new String[]{"user", "用户列表"});
-//        //权限管理
-//        List<String[]> listRights = new ArrayList<>();
-//        listRights.add(new String[]{"roles", "角色列表"});
-//        listRights.add(new String[]{"rights", "权限列表"});
-//        // 商品管理
-//        List<String[]> listGoods = new ArrayList<>();
-//        listGoods.add(new String[]{"goods", "商品列表"});
-//        listGoods.add(new String[]{"addgoods","添加商品"});
-//        // 订单管理
-//        List<String[]> listOrder = new ArrayList<>();
-//        listOrder.add(new String[]{"order","订单列表"});
-//        listOrder.add(new String[]{"addorder","添加订单"});
-//
-//        menus.put("用户管理", listUsers);
-//        menus.put("权限管理", listRights);
-//        menus.put("商品管理", listGoods);
-//        menus.put("订单管理",listOrder);
         return new Result(menus);
     }
 

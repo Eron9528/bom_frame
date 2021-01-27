@@ -19,7 +19,7 @@ public class Calendar {
     private long id;
     @Column(name = "NAME")
     private String name;     // 员工名称
-    @Column(name = "DAY")
+    @Column(name = "JOB_DAY")
     private LocalDate day;    // 日期
     @Column(name = "TYPE")
     @Enumerated

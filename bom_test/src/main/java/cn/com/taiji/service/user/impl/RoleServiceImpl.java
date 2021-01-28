@@ -1,5 +1,7 @@
 package cn.com.taiji.service.user.impl;
 
+import cn.com.taiji.domain.rightsTree.Children;
+import cn.com.taiji.domain.user.Permission;
 import cn.com.taiji.domain.user.Role;
 import cn.com.taiji.domain.user.RoleRepo;
 import cn.com.taiji.dto.User.RoleDto;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class RoleServiceImpl implements RoleService {
@@ -63,6 +66,44 @@ public class RoleServiceImpl implements RoleService {
         Role role = roleRepo.findById(id).orElse(null);
         if (role != null)
             roleRepo.deleteById(id);
+        return role;
+    }
+
+    @Override
+    public Permission deleteRoleRightById(long rightId, long roleId) {
+        // 获取此id 的所有子孩子权限
+        List<Permission> rights = permissionService.findChildRightByUpId(rightId);
+        // 获取此id 的权限并添加到rights 里面取
+        Permission right = permissionService.findById(rightId);
+        rights.add(right);
+
+        Role role = roleRepo.findById(roleId).orElse(null);
+        Set<Permission> permissionSet = role.getPermissions();
+        permissionSet.forEach(permission -> {
+           if (rights.contains(permission)){
+               permissionSet.remove(permission);
+           }
+        });
+        role.setPermissions(permissionSet);
+        roleRepo.save(role);
+        return right;
+    }
+
+    @Override
+    public List<Children> findRoleRightsById(long roleId) {
+        Role role = roleRepo.findById(roleId).orElse(null);
+        // 这样是否可以直接获取所有权限
+        Set<Permission> permissionsSet = role.getPermissions();
+        List<Children> childrenList = new ArrayList<>();
+        permissionsSet.forEach(permission -> {
+
+        });
+        return childrenList;
+    }
+
+    @Override
+    public Role updateRights(long roleId, List<Children> children) {
+        Role role = roleRepo.findById(roleId).orElse(null);
         return role;
     }
 }

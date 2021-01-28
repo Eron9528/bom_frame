@@ -53,4 +53,18 @@ public interface PermissionService {
      * @创建时间 2021/1/25
     */
     Permission deleteById(long id);
+
+    /**
+     * @描述   根据id 查找权限
+     * @创建人 Mayu
+     * @创建时间 2021/1/28
+    */
+    Permission findById(long id);
+
+    /**
+     * @描述   返回此id权限的的所有子权限
+     * @创建人 Mayu
+     * @创建时间 2021/1/28
+    */
+    List<Permission> findChildRightByUpId(long rightId);
 }

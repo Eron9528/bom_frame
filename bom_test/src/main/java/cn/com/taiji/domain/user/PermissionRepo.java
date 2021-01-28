@@ -12,4 +12,5 @@ public interface PermissionRepo extends JpaRepository <Permission, Long> {
 
     @Query(value = "from Permission where layer=1")
     List<Permission> findFirstLayer();
+
 }

@@ -1,5 +1,7 @@
 package cn.com.taiji.controller.user;
 
+import cn.com.taiji.domain.rightsTree.Children;
+import cn.com.taiji.domain.user.Permission;
 import cn.com.taiji.domain.user.Role;
 import cn.com.taiji.dto.Result;
 import cn.com.taiji.dto.User.RoleDto;
@@ -46,4 +48,26 @@ public class RoleController {
         Role newRole = roleService.deleteRoleById(id);
         return new Result(newRole);
     }
+
+    // ------------- 下面的方法是关于角色的权限的操作，包括 ------------------
+
+    // 点击展开页的删除操作
+    @DeleteMapping("deleteRoleRightById/{rightId}/{roleId}")
+    public Result deleteRoleRightById(@PathVariable("rightId") long rightId,@PathVariable("roleId") long roleId){
+        Permission permission = roleService.deleteRoleRightById(rightId,roleId);
+        return new Result();
+    }
+
+    @GetMapping("getRoleRightsById/{roleId}")
+    public Result getRoleRights(@PathVariable("roleId") long roleId){
+        List<Children> children = roleService.findRoleRightsById(roleId);
+        return new Result(children);
+    }
+
+    @PostMapping("updateRoleRights/{roleId}")
+    public Result updateRoleRights(@PathVariable("roleId") long roleId, @RequestBody List<Children> children){
+        Role role = roleService.updateRights(roleId, children);
+        return new Result(role);
+    }
+
 }

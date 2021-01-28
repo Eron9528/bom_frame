@@ -55,6 +55,7 @@ public class PermissionServiceImpl implements PermissionService {
             children.setLayer(permissionTreeNode.getData().getLayer());
             children.setLable(permissionTreeNode.getData().getPermissionName());
             List<Children> treeChildren = new ArrayList<>();
+            List<Children> lastChildren = new ArrayList<>();
             if(permissionTreeNode.getData().isHasChild()){
                 for (TreeNode<Permission> treeNode : permissionTreeNode.getChildrenNode()){
                     Children children1 = new Children();
@@ -62,6 +63,16 @@ public class PermissionServiceImpl implements PermissionService {
                     children1.setLayer(treeNode.getData().getLayer());
                     children1.setLable(treeNode.getData().getPermissionName());
                     treeChildren.add(children1);
+                    if (treeNode.getData().isHasChild()){
+                        for(TreeNode<Permission> treeNode1 : treeNode.getChildrenNode()){
+                            Children children2 = new Children();
+                            children2.setMenuId(treeNode1.getData().getId() + "");
+                            children2.setLayer(treeNode1.getData().getLayer());
+                            children2.setLable(treeNode1.getData().getPermissionName());
+                            lastChildren.add(children2);
+                        }
+                        children1.setChildren(lastChildren);
+                    }
                 }
                 children.setChildren(treeChildren);
             }
@@ -113,6 +124,27 @@ public class PermissionServiceImpl implements PermissionService {
         Permission right = permissionRepo.findById(id).orElse(null);
         permissionRepo.deleteById(id);
         return right;
+    }
+
+    @Override
+    public Permission findById(long id) {
+        return permissionRepo.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Permission> findChildRightByUpId(long rightId) {
+        List<Permission> allPermission = getChildPermissions(rightId);
+        return allPermission;
+    }
+
+    public List<Permission> getChildPermissions(long id){
+        List<Permission> permissions = permissionRepo.findChildByMenuId(id);
+        permissions.forEach(permission -> {
+            if (permission.isHasChild()){
+                permissions.addAll(getChildPermissions(permission.getId()));
+            }
+        });
+        return permissions;
     }
 
 }

@@ -38,4 +38,11 @@ public interface RoleService {
      * @创建时间 2021/1/28
     */
     Role updateRights(long roleId, List<Children> children);
+
+    /**
+     * @Author: Eron
+     * @Description:   权限页面刷新点击扩展按钮下的所有权限
+     * @Date: 23:43 2021/1/29
+     */
+    List<RoleDto> findRoleRights();
 }

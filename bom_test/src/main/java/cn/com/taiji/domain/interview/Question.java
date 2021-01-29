@@ -8,9 +8,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "QUESTION")
 public class Question {
@@ -28,4 +25,52 @@ public class Question {
     private LocalDateTime createTime;     // 创建时间
     @Column(name = "USERID")
     private String userId;                // 创建人ID
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getQuestionName() {
+        return questionName;
+    }
+
+    public void setQuestionName(String questionName) {
+        this.questionName = questionName;
+    }
+
+    public String getQuestionContent() {
+        return questionContent;
+    }
+
+    public void setQuestionContent(String questionContent) {
+        this.questionContent = questionContent;
+    }
+
+    public QuestionType getType() {
+        return type;
+    }
+
+    public void setType(QuestionType type) {
+        this.type = type;
+    }
+
+    public LocalDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(LocalDateTime createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }

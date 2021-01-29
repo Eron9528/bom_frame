@@ -107,4 +107,25 @@ public class RoleServiceImpl implements RoleService {
         Role role = roleRepo.findById(roleId).orElse(null);
         return role;
     }
+
+    @Override
+    public List<RoleDto> findRoleRights() {
+        List<RoleDto> dtos = new ArrayList<>();
+        List<Role> roles = roleRepo.findAll();
+        roles.forEach( role -> {
+            RoleDto dto = new RoleDto();
+            dto.setId(role.getId());
+            dto.setRoleName(role.getRoleName());
+            dto.setRoleDesc(role.getRoleDesc());
+            //dto.setChildrenList();
+
+            // 分层找到这个角色的权限及其子权限
+            List<Children> children = new ArrayList<>();
+
+
+
+
+        });
+        return null;
+    }
 }

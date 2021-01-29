@@ -7,9 +7,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "ANSWER")
 public class Answer {
@@ -21,5 +18,37 @@ public class Answer {
     @Column(name = "CREATE_TIME")
     private LocalDateTime createTime;
     @Column(name = "USERID")
-    private String userId;
+    private long userId;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getAnswerContent() {
+        return answerContent;
+    }
+
+    public void setAnswerContent(String answerContent) {
+        this.answerContent = answerContent;
+    }
+
+    public LocalDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(LocalDateTime createTime) {
+        this.createTime = createTime;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
 }

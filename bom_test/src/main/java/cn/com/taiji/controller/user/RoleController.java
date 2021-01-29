@@ -21,7 +21,8 @@ public class RoleController {
 
     @GetMapping("roles")
     public Result getRoles(){
-        List<RoleDto> roles = roleService.findAll();
+    //    List<RoleDto> roles = roleService.findAll();
+        List<RoleDto> roles = roleService.findRoleRights();
         return new Result(roles);
     }
 

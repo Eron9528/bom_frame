@@ -38,7 +38,7 @@ public class JavaController {
         return new Result(question1);
     }
 
-    @DeleteMapping("deleteById/{id}")
+    @DeleteMapping("deleteQuestionById/{id}")
     public Result deleteQuestion(@PathVariable("id") long id){
         Question question = questionService.deleteById(id);
         return new Result(question);
@@ -50,4 +50,15 @@ public class JavaController {
         return new Result(answer1);
     }
 
+    @PostMapping("editReply/{id}")
+    public Result editReply(@PathVariable("id") long id, @RequestBody Answer answer){
+        Answer answer1 = answerService.editReply(id, answer);
+        return new Result(answer1);
+    }
+
+    @DeleteMapping("deleteReplyById/{id}")
+    public Result deleteReply(@PathVariable("id") long id){
+        Answer answer1 = answerService.deleteById(id);
+        return new Result(answer1);
+    }
 }

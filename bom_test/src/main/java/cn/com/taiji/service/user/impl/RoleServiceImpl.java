@@ -84,6 +84,7 @@ public class RoleServiceImpl implements RoleService {
                permissionSet.remove(permission);
            }
         });
+
         role.setPermissions(permissionSet);
         roleRepo.save(role);
         return right;

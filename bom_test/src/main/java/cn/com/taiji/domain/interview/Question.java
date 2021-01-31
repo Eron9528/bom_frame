@@ -23,7 +23,7 @@ public class Question {
     private QuestionType type;            // 问题类型
     @Column(name = "CREATE_TIME")
     private LocalDateTime createTime;     // 创建时间
-    @Column(name = "USERID")
+    @Column(name = "USER_ID")
     private String userId;                // 创建人ID
 
     public long getId() {

@@ -3,15 +3,17 @@ package cn.com.taiji.domain.interview.dict;
 public enum QuestionType {
 
     JAVA("JAVA"),
+    SPRING("SPRING"),
     SPRING_BOOT("SPRINGBOOT"),
     SPRING_CLOUD("SPRINGCLOUD"),
-    MYSQL("MYSQL"),
-    SPRING("SPRING");
+    MYSQL("MYSQL");
+
 
     public String values;
 
     private QuestionType(String values)
     {
+
         this.values = values;
     }
 
@@ -23,4 +25,5 @@ public enum QuestionType {
     public String getName(){
         return super.name();
     }
+
 }

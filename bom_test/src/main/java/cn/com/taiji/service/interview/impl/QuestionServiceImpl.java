@@ -1,4 +1,4 @@
-package cn.com.taiji.service.interview.dict;
+package cn.com.taiji.service.interview.impl;
 
 import cn.com.taiji.domain.interview.Question;
 import cn.com.taiji.domain.interview.QuestionRepository;
@@ -43,8 +43,20 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public List<Question> listByType(String type) {
-        QuestionType questionType = QuestionType.valueOf(type);
-        List<Question> questionList = questionRepository.findByType(questionType);
+        QuestionType questionType = QuestionType.JAVA;
+        if (type.equals(QuestionType.SPRING.getName())){
+            questionType = QuestionType.SPRING;
+        }else if (type.equals(QuestionType.SPRING_BOOT.getName())) {
+            questionType = QuestionType.SPRING_BOOT;
+        }else if (type.equals(QuestionType.SPRING_CLOUD.getName())) {
+            questionType = QuestionType.SPRING_CLOUD;
+        }else if (type.equals(QuestionType.MYSQL.getName())) {
+            questionType = QuestionType.MYSQL;
+        }
+        System.out.println(questionType.toString());
+        List<Question> questionList = questionRepository.findByType(1);
+        System.out.println(questionList.size());
+
         return questionList;
     }
 }

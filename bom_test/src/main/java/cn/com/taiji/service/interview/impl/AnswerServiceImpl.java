@@ -1,8 +1,7 @@
-package cn.com.taiji.service.interview.dict;
+package cn.com.taiji.service.interview.impl;
 
 import cn.com.taiji.domain.interview.Answer;
 import cn.com.taiji.domain.interview.AnswerRepository;
-import cn.com.taiji.domain.interview.Question;
 import cn.com.taiji.service.interview.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
